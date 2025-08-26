@@ -95,68 +95,16 @@ export default function Chat() {
     }
   }
 
-  // Clear chat history
-  const clearHistory = () => {
-    chatService.clearChatHistory()
-    setMessages([])
-  }
 
-  const remaining = dailyLimitInfo.limit - dailyLimitInfo.count
+
+
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Back Button - Top Left */}
-      <motion.div 
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        className="absolute top-4 left-4 z-40"
-      >
-        <Link 
-          to="/"
-          className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-        >
-          <motion.svg
-            animate={{ x: [0, -2, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-5 h-5 text-gray-600 group-hover:text-brand-primary"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </motion.svg>
-          <span className="text-sm font-medium text-gray-600 group-hover:text-brand-primary">Back to Home</span>
-        </Link>
-      </motion.div>
 
-      {/* Message Counter - Top Right */}
-      <motion.div 
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        className="absolute top-4 right-4 z-40 flex gap-2"
-      >
-        {/* Daily Limit Counter */}
-        <div className="px-4 py-2 bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-full border border-brand-primary/20 shadow-lg">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold text-brand-primary">
-              {remaining}/{dailyLimitInfo.limit}
-            </span>
-            <span className="text-xs text-brand-primary/70">messages today</span>
-          </div>
-        </div>
-
-        {/* Clear History Button */}
-        <button
-          onClick={clearHistory}
-          className="px-3 py-2 bg-red-50 hover:bg-red-100 text-red-600 rounded-full border border-red-200 shadow-lg hover:shadow-xl transition-all duration-300"
-          title="Clear chat history"
-        >
-          🗑️
-        </button>
-      </motion.div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 overflow-hidden pt-20">
+      <div className="flex-1 overflow-hidden pt-4">
         <div className="w-full max-w-6xl mx-auto h-full flex flex-col">
           {/* Messages Container */}
           <div 
@@ -192,7 +140,7 @@ export default function Chat() {
                     Start your spiritual journey by asking Bappa anything. I'm here to provide wisdom and guidance.
                   </p>
                   <div className="text-sm text-gray-500">
-                    You have {remaining} messages remaining today
+                    Start chatting with Bappa for spiritual guidance
                   </div>
                 </motion.div>
               </motion.div>
@@ -234,28 +182,7 @@ export default function Chat() {
         className="sticky bottom-0 bg-white/95 backdrop-blur-xl border-t border-gray-200/60 shadow-lg"
       >
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <ChatInput onSend={handleSend} disabled={remaining <= 0} remaining={remaining} />
-          
-          {/* Enhanced Daily Limit Notice */}
-          {remaining <= 0 && (
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 text-center"
-            >
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-2xl shadow-sm">
-                <span className="text-2xl">⏰</span>
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-red-600">
-                    Daily limit reached
-                  </p>
-                  <p className="text-xs text-red-500">
-                    Come back tomorrow for more wisdom!
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          )}
+          <ChatInput onSend={handleSend} disabled={false} remaining={dailyLimitInfo.limit} />
         </div>
       </motion.div>
     </div>
