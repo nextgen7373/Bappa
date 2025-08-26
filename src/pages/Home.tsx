@@ -110,7 +110,7 @@ export default function Home(){
           className="mb-6 p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-premium border border-white/20"
         >
           <div className="flex items-center justify-center gap-2">
-            <span className="text-sm text-gray-600">Groq API Status:</span>
+            <span className="text-sm text-gray-600">Status</span>
             {apiStatus === 'checking' && (
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
