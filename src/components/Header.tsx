@@ -2,7 +2,8 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-export default function Header() {
+// This component uses useLocation, so it must be rendered inside Router context
+function HeaderContent() {
   const location = useLocation()
   
   return (
@@ -73,4 +74,9 @@ export default function Header() {
       </div>
     </motion.header>
   )
+}
+
+// Export a simple component that doesn't use Router hooks
+export default function Header() {
+  return <HeaderContent />
 }
