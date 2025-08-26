@@ -1,0 +1,62 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFE6D6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFF2E6;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="ornamentGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF6E19;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#FF6E19;stop-opacity:0.05" />
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="60" fill="url(#ornamentGradient)" opacity="0.3"/>
+  <circle cx="1100" cy="150" r="80" fill="url(#ornamentGradient)" opacity="0.2"/>
+  <circle cx="200" cy="700" r="70" fill="url(#ornamentGradient)" opacity="0.25"/>
+  <circle cx="1000" cy="650" r="50" fill="url(#ornamentGradient)" opacity="0.3"/>
+  
+  <!-- Om symbol -->
+  <g transform="translate(50, 50)" opacity="0.1">
+    <path d="M0 20 Q10 0 20 20 Q30 40 20 60 Q10 80 0 60 Q-10 40 0 20 Z" fill="#FF6E19"/>
+    <circle cx="10" cy="40" r="8" fill="#FF8533"/>
+  </g>
+  
+  <!-- Lotus petals -->
+  <g transform="translate(1150, 100)" opacity="0.15">
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF6E19" transform="rotate(0)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF8533" transform="rotate(45)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF6E19" transform="rotate(90)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF8533" transform="rotate(135)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF6E19" transform="rotate(180)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF8533" transform="rotate(225)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF6E19" transform="rotate(270)"/>
+    <path d="M0 0 Q10 -15 20 0 Q10 15 0 0 Z" fill="#FF8533" transform="rotate(315)"/>
+  </g>
+  
+  <!-- Floating elements -->
+  <g opacity="0.08">
+    <circle cx="300" cy="200" r="4" fill="#FF6E19" class="animate-float"/>
+    <circle cx="900" cy="300" r="6" fill="#FF8533" class="animate-float" style="animation-delay: -2s"/>
+    <circle cx="400" cy="500" r="5" fill="#FF6E19" class="animate-float" style="animation-delay: -4s"/>
+    <circle cx="800" cy="400" r="3" fill="#FF8533" class="animate-float" style="animation-delay: -1s"/>
+  </g>
+  
+  <!-- Subtle patterns -->
+  <g opacity="0.05">
+    <path d="M0 400 Q200 350 400 400 Q600 450 800 400 Q1000 350 1200 400" stroke="#FF6E19" stroke-width="2" fill="none"/>
+    <path d="M0 600 Q200 550 400 600 Q600 650 800 600 Q1000 550 1200 600" stroke="#FF8533" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>

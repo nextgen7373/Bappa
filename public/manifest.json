@@ -1,0 +1,10 @@
+{
+  "name": "Bappa.ai",
+  "short_name": "Bappa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F0",
+  "theme_color": "#FF6E19",
+  "description": "AI-powered spiritual guidance and wisdom",
+  "icons": []
+}

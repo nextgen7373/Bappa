@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/chat",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/404",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/not-found",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
