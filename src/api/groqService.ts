@@ -75,7 +75,7 @@ Your role is to talk to people in a friendly, loving, and fatherly/elderly tone 
 
       const completion = await this.groq.chat.completions.create({
         messages,
-        model: 'llama3-8b-8192',
+        model: 'llama-3.1-8b-instant',
         temperature: 0.7,
         max_tokens: 300,
         top_p: 1,
